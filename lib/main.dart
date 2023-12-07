@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:learningdart/pages/choose_location.dart';
+import 'package:learningdart/pages/home.dart';
+import 'package:learningdart/pages/loading.dart';
 
-void main() => runApp(MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('My First App'),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Text('Click'),
-        ),
-      ),
-    ));
+void main() => runApp(MaterialApp(initialRoute: '/home', routes: {
+      '/': (context) => Loading(),
+      "/home": (context) => Home(),
+      '/location': (context) => ChooseLocation(),
+    }));
